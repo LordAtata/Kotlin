@@ -51,16 +51,16 @@ class MainActivity : AppCompatActivity() {
 
         val progressBar =
             layoutInflater.inflate(R.layout.progress_bar_layout, binding.mainLayoutLogin, false)
-        binding.mainLayoutLogin.addView(progressBar)
+        binding.loginLayout.addView(progressBar)
 
         Handler().postDelayed(
             {
-                binding.mainLayoutLogin.removeView(progressBar)
+                binding.loginLayout.removeView(progressBar)
                 binding.emailInput.isEnabled = true
                 binding.passwordInput.isEnabled = true
                 binding.agreementsCheckBox.isEnabled = true
                 binding.loginButton.isEnabled = true
-                Toast.makeText(this, "Вход прошел успешно", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.successful_login), Toast.LENGTH_LONG).show()
             },
             2000
         )

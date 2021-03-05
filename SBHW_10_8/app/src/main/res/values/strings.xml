@@ -5,4 +5,5 @@
     <string name="email">loginworld@email.com</string>
     <string name="password">password</string>
     <string name="login">Войти</string>
+    <string name="successful_login">Вход прошел успешно</string>
 </resources>
