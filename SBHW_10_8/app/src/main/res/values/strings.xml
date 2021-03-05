@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SBHW_10_8</string>
+    <string name="checkBoxText"><strike> Отдать душу </strike> Принять соглашения</string>
+    <string name="input">Вход</string>
+    <string name="email">loginworld@email.com</string>
+    <string name="password">password</string>
+    <string name="login">Войти</string>
+</resources>
