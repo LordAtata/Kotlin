@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SBHW_10_8</string>
+    <string name="checkBoxText"><strike>Отдать душу</strike> Принять соглашения</string>
+    <string name="input">Вход</string>
+    <string name="email">loginworld@email.com</string>
+    <string name="password">password</string>
+    <string name="login">Войти</string>
+    <string name="successful_login">Вход прошел успешно</string>
+    <string name="anr">ANR</string>
+    <string name="invalid_form">Форма заполнена некорректно</string>
+    <string name="item_1">Item 1</string>
+    <string name="item_2">Item 2</string>
+    <string name="item_3">Item 3</string>
+    <string name="item_4">Item 4</string>
+    <string name="item_5">Item 5</string>
+    <string name="description">Описание</string>
+</resources>
