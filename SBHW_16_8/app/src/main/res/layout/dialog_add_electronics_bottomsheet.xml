@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/bottomSheetHeadingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_electronics"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/addSmartphoneTextView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/smartphone"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:drawableLeftCompat="@drawable/ic_baseline_smartphone"
+        app:drawableTint="@color/black" />
+
+    <TextView
+        android:id="@+id/addTelevisionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/television"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:drawableLeftCompat="@drawable/ic_baseline_tv"
+        app:drawableTint="@color/black" />
+
+    <TextView
+        android:id="@+id/addGameConsoleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="@string/game_console"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:drawableLeftCompat="@drawable/ic_baseline_videogame_asset"
+        app:drawableTint="@color/black" />
+
+</LinearLayout>

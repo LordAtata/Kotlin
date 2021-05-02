@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">SBHW_16_8</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="select_electronics">Выберите категорию добавляемой электроники:</string>
+    <string name="smartphone">Smartphone</string>
+    <string name="television">Television</string>
+    <string name="game_console">Game Console</string>
+    <string name="enter_name">Введите наименование</string>
+    <string name="enter_image_link">Вставьте ссылку на изображение</string>
+    <string name="enter_price">Введите стоимость в рублях</string>
+    <string name="smart_tv">Smart TV</string>
+    <string name="ray_tracing">Ray tracing</string>
+    <string name="popuga_image_link">https://mem-baza.ru/_ph/1/2/91469348.jpg?1600931445</string>
+    <string name="ssd">SSD</string>
+<!--    electronics-->
+    <string name="screen_size">Screen size: %1$s</string>
+    <string name="country_of_origin">Country of origin: %1$s</string>
+    <string name="price">%1$d RUB</string>
+    <string name="processor">Processor: %1$s</string>
+    <string name="memory">Memory: %1$dGB</string>
+    <string name="hd_resolution">HD resolution: %1$s</string>
+<!--    smartphone-->
+    <string name="os">OS: %1$s</string>
+    <string name="camera">Camera: %1$s</string>
+    <string name="ram">Ram: %1$dGB</string>
+    <string name="battery">Battery: %1$dmAh</string>
+<!--    television-->
+    <string name="smart_tv_true">Smart TV: есть</string>
+    <string name="smart_tv_false">Smart TV: нет</string>
+    <string name="smart_os">Smart OS: %1$s</string>
+<!--    game console-->
+    <string name="graphics_processor">Graphics processor: %1$s</string>
+    <string name="ray_tracing_true">Ray tracing: есть</string>
+    <string name="ray_tracing_false">Ray tracing: нет</string>
+    <string name="ssd_true">SSD: есть</string>
+    <string name="ssd_false">SSD: нет</string>
+    <string name="screen_size_or_hd_resolution">Если у устройства есть экран, то заполните поле Screen size, если нет, то HD resolution.</string>
+    <string name="list_is_empty">Список электроники пуст</string>
+    <!--    end electronics-->
+</resources>

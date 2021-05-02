@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/addName_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_name" />
+
+        <EditText
+            android:id="@+id/addImageLink_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_image_link" />
+
+        <EditText
+            android:id="@+id/addCountry_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/country_of_origin" />
+
+        <EditText
+            android:id="@+id/addPrice_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_price"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/addProcessor_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/processor" />
+
+        <EditText
+            android:id="@+id/addGProcessor_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/graphics_processor" />
+
+        <EditText
+            android:id="@+id/addMemory_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/memory"
+            android:inputType="number" />
+
+        <CheckBox
+            android:id="@+id/rayTracing_GC_CB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ray_tracing" />
+
+        <CheckBox
+            android:id="@+id/ssd_GC_CB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ssd" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_size_or_hd_resolution" />
+
+        <EditText
+            android:id="@+id/addScreenSize_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/screen_size" />
+
+        <EditText
+            android:id="@+id/addResolutionHD_GC_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hd_resolution" />
+    </LinearLayout>
+
+</ScrollView>
