@@ -30,11 +30,16 @@ class ElectronicsDialogFragment : BottomSheetDialogFragment() {
         setClickListeners()
     }
 
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
+
     private fun setClickListeners() {
         binding.addSmartphoneTextView.setOnClickListener {
             setFragmentResult(ListFragment.KEY_REQUEST_TYPE, bundleOf(ListFragment.KEY_BUNDLE_TYPE to ListFragment.TYPE_SP))
-            Log.e("life", "result")
-            dismiss()
+//            Log.e("life", "result")
+//            dismiss()
         }
         binding.addTelevisionTextView.setOnClickListener {
             setFragmentResult(ListFragment.KEY_REQUEST_TYPE, bundleOf(ListFragment.KEY_BUNDLE_TYPE to ListFragment.TYPE_TV))

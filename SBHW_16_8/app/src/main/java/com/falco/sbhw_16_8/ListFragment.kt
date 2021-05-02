@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.falco.sbhw_16_8.databinding.FragmentListBinding
 
@@ -138,36 +137,38 @@ class ListFragment : Fragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        initList()
-        electronicsAdapter?.updateElectronics(electronics)
-        electronicsAdapter?.notifyDataSetChanged()
-        binding.addFab.setOnClickListener { createAddElectronicsBottomsheet() }
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    private fun initList() {
-        electronicsAdapter = ElectronicsAdapter { position -> deleteElectronics(position) }
-        with(binding.electronicsList) {
-            adapter = electronicsAdapter
-            layoutManager = LinearLayoutManager(requireContext())
-            setHasFixedSize(true)
-        }
-    }
+//        setFragmentResultListener(KEY_REQUEST_TYPE) { key, bundle ->
+//            Log.e(
+//                "lifeCycle",
+//                "setListener request = $KEY_REQUEST_TYPE, key = $key, bundle = $bundle, ${
+//                    bundle.getString(KEY_BUNDLE_TYPE)
+//                }"
+//            )
+//            when (val electronicType = bundle.getString(KEY_BUNDLE_TYPE)) {
+//                TYPE_SP -> {
+//                    SmartphoneInfoDialogFragment()
+//                        .show(childFragmentManager, DIALOG_ADD_SMARTPHONE_TAG)
+//                    addElectronicsResultListener()
+//                }
+//                TYPE_TV -> {
+//                    TelevisionInfoDialogFragment()
+//                        .show(childFragmentManager, DIALOG_ADD_TELEVISION_TAG)
+//                    addElectronicsResultListener()
+//                }
+//                TYPE_GC -> {
+//                    GameConsoleInfoDialogFragment()
+//                        .show(childFragmentManager, DIALOG_ADD_GAME_CONSOLE_TAG)
+//                    addElectronicsResultListener()
+//                }
+//                else -> error("Electronic type = $electronicType is not a SP, TV, GC ")
+//            }
+//        }
 
-    private fun createAddElectronicsBottomsheet() {
-        ElectronicsDialogFragment()
-            .show(childFragmentManager, DIALOG_ADD_ELECTRONICS_TAG)
-        childFragmentManager.setFragmentResultListener(
-            KEY_REQUEST_TYPE,
-            { lifecycle }
-        ) { key, bundle ->
-            Log.e(
-                "lifeCycle",
-                "setListener request = $KEY_REQUEST_TYPE, key = $key, bundle = $bundle, ${
-                bundle.getString(KEY_BUNDLE_TYPE)
-                }"
-            )
+        childFragmentManager.setFragmentResultListener(KEY_REQUEST_TYPE, this) { key, bundle ->
+            Log.d("myKey", key)
             when (val electronicType = bundle.getString(KEY_BUNDLE_TYPE)) {
                 TYPE_SP -> {
                     SmartphoneInfoDialogFragment()
@@ -186,6 +187,25 @@ class ListFragment : Fragment() {
                 }
                 else -> error("Electronic type = $electronicType is not a SP, TV, GC ")
             }
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initList()
+        electronicsAdapter?.updateElectronics(electronics)
+        electronicsAdapter?.notifyDataSetChanged()
+        binding.addFab.setOnClickListener {
+            ElectronicsDialogFragment().show(childFragmentManager, DIALOG_ADD_ELECTRONICS_TAG)
+        }
+    }
+
+    private fun initList() {
+        electronicsAdapter = ElectronicsAdapter { position -> deleteElectronics(position) }
+        with(binding.electronicsList) {
+            adapter = electronicsAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
         }
     }
 
@@ -218,9 +238,9 @@ class ListFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         electronicsAdapter = null
         _binding = null
+        super.onDestroyView()
     }
 
     private fun addElectronics(electronic: Electronics) {
